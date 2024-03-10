@@ -154,7 +154,7 @@ def load_ironpython_test(*args):
     _add_reference_to_dlr_core()
     clr.AddReference("Microsoft.Scripting")
     clr.AddReference("Microsoft.Dynamic")
-    clr.AddReference("IronPython")
+    clr.AddReference("IronPython2")
 
     if args: 
         return clr.LoadAssemblyFromFileWithPath(_iron_python_test_dll)
@@ -164,7 +164,7 @@ def load_ironpython_test(*args):
 class IronPythonTestCase(unittest.TestCase, FileUtil, ProcessUtil):
 
     def setUp(self):
-        self._temporary_dir = os.path.join(self.temp_dir, "IronPython")
+        self._temporary_dir = os.path.join(self.temp_dir, "IronPython2")
         self.ensure_directory_present(self._temporary_dir)
         
         self._iron_python_test_dll = _iron_python_test_dll
@@ -183,10 +183,10 @@ class IronPythonTestCase(unittest.TestCase, FileUtil, ProcessUtil):
     def load_iron_python_dll(self):
         #When assemblies are installed into the GAC, we should not expect
         #IronPython.dll to exist alongside IronPython2.dll
-        if os.path.exists(os.path.join(sys.prefix, "IronPython.dll")):
-            clr.AddReferenceToFileAndPath(os.path.join(sys.prefix, "IronPython.dll"))
+        if os.path.exists(os.path.join(sys.prefix, "IronPython2.dll")):
+            clr.AddReferenceToFileAndPath(os.path.join(sys.prefix, "IronPython2.dll"))
         else:
-            clr.AddReference("IronPython")
+            clr.AddReference("IronPython2")
 
     def add_clr_assemblies(self, *dlls):
         """Adds test assemblies as references"""

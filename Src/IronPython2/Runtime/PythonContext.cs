@@ -1667,7 +1667,7 @@ namespace IronPython2.Runtime
 
                 MethodBase method = frame.GetMethod();
                 if (CallSiteHelpers.IsInternalFrame(method) ||
-                    (method.DeclaringType != null && method.DeclaringType.FullName.StartsWith("IronPython."))) {
+                    (method.DeclaringType != null && method.DeclaringType.FullName.StartsWith("IronPython2."))) {
                     continue;
                 }
 

@@ -913,7 +913,7 @@ namespace IronPython2.Runtime {
         }
 
         private static bool IsPythonType(Type t) {
-            return t.FullName.StartsWith("IronPython."); //!!! this and the check below are hacks
+            return t.FullName.StartsWith("IronPython2."); //!!! this and the check below are hacks
         }
 
         private static bool HasPythonProtocol(Type t, string name) {

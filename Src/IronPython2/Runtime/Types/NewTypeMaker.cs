@@ -56,7 +56,7 @@ namespace IronPython2.Runtime.Types {
 #endif
 
         public const string VtableNamesField = "#VTableNames#";
-        public const string TypePrefix = "IronPython.NewTypes.";
+        public const string TypePrefix = "IronPython2.NewTypes.";
         public const string BaseMethodPrefix = "#base#";
         public const string FieldGetterPrefix = "#field_get#", FieldSetterPrefix = "#field_set#";
 #if FEATURE_REFEMIT
